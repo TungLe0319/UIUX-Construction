@@ -1,19 +1,19 @@
 <template>
   <div>
-    <div class=" text-5xl text-center my-5">
-     Features
+    <div class=" text-5xl text-center  font-bold my-10">
+    Our Services
     </div>
     <hr class="   h-2 border-orange-400">
-    <div class="  grid grid-cols-3 gap-5 lg:p-10">
+    <div class="  grid grid-cols-3 gap-5 lg:p-10 my-10">
       <div v-motion-slide-visible-bottom v-for="item in items" class="border border-black/20 p-5 hover:shadow-xl transition-all duration-300">
-      <div class="flex gap-2 items-center justify-start">
-          <Icon :name="item.icon" size="50px" class="text-orange-400" />
-          <span class="text-2xl font-serif "> {{ item.title }}</span>
+      <div class="flex gap-4  ">
+          <Icon :name="item.icon" size="50px" class="text-orange-400 text-4xl" />
+      <div class=" w-3/4">
+            <span class="text-2xl font-serif "> {{ item.title }}</span>
+            <p class=" my-5 text-gray-500"> {{ item.content }} </p>
       </div>
-       <p class=" my-5"> {{ item.content }} </p>
-        <div class="my-4">
-          <v-btn color="orange-lighten-2">Buy Now!</v-btn>
-        </div>
+      </div>
+        
       </div>
     </div>
   </div>
@@ -24,46 +24,50 @@
 
 const items = [
   {
-    title: 'Lorem Ipsum',
-    icon: 'mdi:thermometer',
-    content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam accusantium quibusdam quos! Velit, incidunt eius!'
+    title: 'PRE-CONSTRUCTION SERVICES',
+    icon: 'material-symbols:construction',
+    content: 'We take our time on initial planning before any construction begins, to balance all the financial and efficiency issues beforehand...'
   },
   {
-    title: 'Lorem Ipsum',
-    icon: 'mdi:check',
-    content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam accusantium quibusdam quos! Velit, incidunt eius!'
+    title: 'CONSTRUCTION MANAGEMENT',
+    icon: 'solar:buildings-2-bold',
+    content: 'Construction project management is essential. We are using the most time and iterations efficient life cycles methods for that.'
   },
   {
-    title: 'Lorem Ipsum',
-    icon: 'mdi:thermometer-check',
-    content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam accusantium quibusdam quos! Velit, incidunt eius!'
+    title: 'BUILDING INFORMATION MODELING',
+    icon: 'solar:home-broken',
+    content: 'Oftentimes physical and functional essence of any construction project needs to be represented digitally, in a 3D model format.'
   },
   {
-    title: 'Lorem Ipsum',
+    title: 'CONSTRUCTION SERVICES',
     icon: 'mdi:cog',
-    content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam accusantium quibusdam quos! Velit, incidunt eius!'
+    content: 'Our customers love the pace/quality tempo that we show during each of the principal construction processes!'
   },
   {
-    title: 'Lorem Ipsum',
-    icon: 'mdi:hand-extended',
-    content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam accusantium quibusdam quos! Velit, incidunt eius!'
+    title: 'DESIGN-BUILD',
+    icon: 'mdi:pencil-ruler',
+    content: 'If a project is not too complex, we may hire a designer-builder type of contractor, to make the longevity of the construction shorter.'
   },
   {
-    title: 'Lorem Ipsum',
-    icon: 'mdi:hand-heart',
-    content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam accusantium quibusdam quos! Velit, incidunt eius!'
+    title: 'COST CONTAINMENT',
+    icon: 'fluent-emoji-high-contrast:magic-wand',
+    content: 'It is vital for any contractor not to exceed the budget and that is why we pay utmost attention to cost containment.'
   },
   {
-    title: 'Lorem Ipsum',
-    icon: 'mdi:loading',
-    content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam accusantium quibusdam quos! Velit, incidunt eius!'
+    title: 'QUALITY ASSURANCE',
+    icon: 'teenyicons:contract-solid',
+    content: 'Every project we work on is checked for quality assurance to satisfy the needs of the modern society.'
   },
   {
-    title: 'Lorem Ipsum',
-    icon: 'mdi:heart',
-    content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam accusantium quibusdam quos! Velit, incidunt eius!'
+    title: 'GENERAL CONTRACTING',
+    icon: 'fa6-solid:people-carry-box',
+    content: 'We have a long list of professional contractors, whom our engineers and architects enjoy to work with on a majority of our projects!'
   },
-
+  {
+    title: 'EQUIPMENT INSTALLATION',
+    icon: 'fluent:people-community-28-filled',
+    content: 'Our professional team can install all kinds of equipment in the finished building as a part of post-construction services.'
+  },
 ]
 
 </script>
