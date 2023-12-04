@@ -2,7 +2,7 @@
   <div>
       <div class=" flex flex-col items-center justify-center">
       <div class=" text-5xl text-center  font-bold my-10">
-      Our Services
+      Pricing
       </div>
       <hr class="  w-1/6  h-2 border-orange-400">
 
