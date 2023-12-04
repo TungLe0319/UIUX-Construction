@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { onBeforeUnmount, onMounted, ref } from 'vue'
 
-
+const activeItem = ref<string | null>(null);
 const navTransform = ref('translateY(0)')
 const Y = ref(0)
 let lastScrollPosition = 0
@@ -25,6 +25,17 @@ function handleScroll() {
 
   lastScrollPosition = scrollY;
 }
+const isActive = (href: string) => {
+  return activeItem.value === href;
+};
+
+
+const scrollToSection = (sectionId: string) => {
+  const section = document.querySelector(sectionId);
+  if (section) {
+    section.scrollIntoView({ behavior: 'smooth' });
+  }
+};
 
 function handleIndicator(el: HTMLElement) {
   const indicator = document.querySelector('.nav-indicator') as HTMLElement
@@ -71,7 +82,7 @@ function setupIndicatorListeners() {
 }
 
 onMounted(() => {
-  window.addEventListener('scroll', handleScroll)
+  window.addEventListener('scroll', handleScroll, { passive: true })
   setTimeout(() => {
     setupIndicatorListeners()
   }, 2000)
@@ -89,11 +100,13 @@ onBeforeUnmount(() => {
 
 
 const items = [
-  { title: 'Home', href: '/', icon: 'mdi-home-city' },
-  { title: 'Our Café', href: '/about', icon: 'mdi-book' },
-  { title: 'Gallery', href: '/gallery', icon: 'mdi-apps' },
-  { title: 'Menu', href: '/menu', icon: 'mdi-food' },
-  { title: 'Contact', href: '/contact', icon: 'mdi-email' },
+  { title: 'Home', href: '#hero-section', icon: 'mdi-home-city' },
+  { title: 'About', href: '#about-section', icon: 'mdi-book' },
+  { title: 'Gallery', href: '#callToAction-section', icon: 'mdi-apps' },
+  { title: 'Features', href: '#features-section', icon: 'mdi-food' },
+  { title: 'Pricing', href: '#pricing-section', icon: 'mdi-food' },
+  { title: 'Projects', href: '#projects-section', icon: 'mdi-food' },
+   { title: 'Contact', href: '#contact-section', icon: 'mdi-food' },
 
 ]
 
@@ -102,14 +115,14 @@ const threshold = ref(200)
 </script>
 <template>
   <v-app-bar app scroll-behavior="elevate" :scroll-threshold="threshold"
-    class="px-4 font-serif transition-color duration-500 " 
+    class="px-4 font-serif transition-color duration-500 "
     :class="{ 'bg-white  text-black': Y > threshold, 'bg-transparent text-white': Y <= threshold }">
     <template v-slot:prepend>
       <v-menu offset="10">
         <template v-slot:activator="{ props }">
-       <div class="lg:hidden block">
-           <v-app-bar-nav-icon  v-bind="props"></v-app-bar-nav-icon>
-       </div>
+          <div class="lg:hidden block">
+            <v-app-bar-nav-icon v-bind="props"></v-app-bar-nav-icon>
+          </div>
         </template>
         <v-list class="w-full bg-red-400" color="orange-lighten-4">
           <v-list-item v-for="(item, i) in items" :key="i" :value="item" color="primary">
@@ -123,19 +136,30 @@ const threshold = ref(200)
         </v-list>
       </v-menu>
     </template>
-  <div  class="flex space-x-4 items-center justify-center" v-motion-slide-left :delay="2000">
-    <Icon name="logos:teamwork-icon" class="text-5xl  drop-shadow-lg" />
+    <div class="flex space-x-4 items-center justify-center" v-motion-slide-left :delay="2000">
+      <Icon name="logos:teamwork-icon" class="text-5xl  drop-shadow-lg" />
       <v-toolbar-title>Lorem Ipsum's Construction</v-toolbar-title>
-  </div>
+    </div>
     <v-spacer></v-spacer>
-    <ul  class="gap-4 relative hidden lg:flex">
+    <!-- <ul  class="gap-4 relative hidden lg:flex">
       <li v-motion-slide-right :delay="2000"  v-for="(item, index) in items" :key="index">
         <nuxt-link  :to="item.href" class="nav-item" exact-active-class="active text-orange-300 drop-shadow-sm ">
           {{ item.title }}
         </nuxt-link>
       </li>
       <div v-motion-slide-right :delay="2000" class="nav-indicator"></div>
-    </ul>
+    </ul> -->
+    <div>
+      <ul class="gap-4 relative hidden lg:flex">
+        <li v-motion-slide-right :delay="2000" v-for="(item, index) in items" :key="index">
+          <v-btn @click="scrollToSection(item.href)"  class="nav-item  !text-sm"
+            :class="{ 'active text-orange-300 drop-shadow-sm': isActive(item.href) }">
+            {{ item.title }}
+          </v-btn>
+        </li>
+
+      </ul>
+    </div>
   </v-app-bar>
 </template>
 
@@ -173,7 +197,7 @@ const threshold = ref(200)
   transition: 0.4s;
   background-color: rgb(253 186 116);
 
-  
+
   border-radius: 8px 8px 0 0;
 }
 

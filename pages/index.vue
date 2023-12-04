@@ -10,13 +10,30 @@ import Testimonials from '~/components/Index/Testimonials.vue';
 
 <template>
   <div class="flex flex-col  ">
-    <Hero />
-    <About/>
-    <CallToAction />
-    <Projects/>
-    <BusinessHours />
-    <LandingPhotoGallery />
-    <Testimonials />
+    <div id="hero-section">
+      <Hero />
+    </div>
+    <div id="about-section">
+      <About />
+    </div>
+    <div id="callToAction-section">
+      <CallToAction />
+    </div>
+    <div id="features-section">
+      <Features />
+    </div>
+    <div id="pricing-section">
+      <Pricing />
+    </div>
+    <div id="projects-section">
+      <Projects />
+    </div>
+    <div id="testimonials-section">
+      <Testimonials />
+    </div>
+    <div id="contact-section">
+      <ContactForm />
+    </div>
   </div>
 </template>
 

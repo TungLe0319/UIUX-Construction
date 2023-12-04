@@ -1,16 +1,18 @@
 <template>
   <div>
-    <div class="text-center my-5">
-      Pricing
+    <div class=" text-5xl text-center my-5">
+     Features
     </div>
-    <hr class="w-full h-2 border-orange-400">
-    <div class=" flex gap-5 lg:p-10">
-      <div v-for="item in items" class="border border-black/20 p-5">
-        <span> {{ item.title }}</span>
-        <span> {{ item.icon }}</span>
-       <span> {{ item.content }} </span>
+    <hr class="   h-2 border-orange-400">
+    <div class="  grid grid-cols-3 gap-5 lg:p-10">
+      <div v-motion-slide-visible-bottom v-for="item in items" class="border border-black/20 p-5 hover:shadow-xl transition-all duration-300">
+      <div class="flex gap-2 items-center justify-start">
+          <Icon :name="item.icon" size="50px" class="text-orange-400" />
+          <span class="text-2xl font-serif "> {{ item.title }}</span>
+      </div>
+       <p class=" my-5"> {{ item.content }} </p>
         <div class="my-4">
-          <v-btn>Buy Now!</v-btn>
+          <v-btn color="orange-lighten-2">Buy Now!</v-btn>
         </div>
       </div>
     </div>
@@ -23,42 +25,42 @@
 const items = [
   {
     title: 'Lorem Ipsum',
-    icon: 'mdi-coffee',
+    icon: 'mdi:thermometer',
     content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam accusantium quibusdam quos! Velit, incidunt eius!'
   },
   {
     title: 'Lorem Ipsum',
-    icon: 'mdi-coffee',
+    icon: 'mdi:check',
     content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam accusantium quibusdam quos! Velit, incidunt eius!'
   },
   {
     title: 'Lorem Ipsum',
-    icon: 'mdi-coffee',
+    icon: 'mdi:thermometer-check',
     content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam accusantium quibusdam quos! Velit, incidunt eius!'
   },
   {
     title: 'Lorem Ipsum',
-    icon: 'mdi-coffee',
+    icon: 'mdi:cog',
     content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam accusantium quibusdam quos! Velit, incidunt eius!'
   },
   {
     title: 'Lorem Ipsum',
-    icon: 'mdi-coffee',
+    icon: 'mdi:hand-extended',
     content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam accusantium quibusdam quos! Velit, incidunt eius!'
   },
   {
     title: 'Lorem Ipsum',
-    icon: 'mdi-coffee',
+    icon: 'mdi:hand-heart',
     content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam accusantium quibusdam quos! Velit, incidunt eius!'
   },
   {
     title: 'Lorem Ipsum',
-    icon: 'mdi-coffee',
+    icon: 'mdi:loading',
     content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam accusantium quibusdam quos! Velit, incidunt eius!'
   },
   {
     title: 'Lorem Ipsum',
-    icon: 'mdi-coffee',
+    icon: 'mdi:heart',
     content: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam accusantium quibusdam quos! Velit, incidunt eius!'
   },
 
