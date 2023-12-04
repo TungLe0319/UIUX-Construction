@@ -13,6 +13,9 @@ import Testimonials from '~/components/Index/Testimonials.vue';
     <div id="hero-section">
       <Hero />
     </div>
+
+
+   
     <div id="about-section">
       <About />
     </div>
@@ -29,7 +32,7 @@ import Testimonials from '~/components/Index/Testimonials.vue';
       <Projects />
     </div>
     <div id="testimonials-section">
-      <Testimonials />
+      <Reviews/>
     </div>
     <div id="contact-section">
       <ContactForm />

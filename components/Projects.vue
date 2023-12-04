@@ -1,21 +1,19 @@
 <template>
   <div class="p-4 lg:p-10">
-    <div class="flex flex-col items-center  justify-center  my-10  ">
-      <div class="text-4xl  ">Lorem Ipsum Dolur</div>
-      <div class="w-full my-5">
-        <IconDivider />
-      </div>
-      <div class=" text-center text-gray-500 my-8 w-2/3">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam
-        accusantium quibusdam quos! Velit, incidunt eius!</div>
+     <div class=" flex flex-col items-center justify-center">
+        <div class=" text-5xl text-center  font-bold my-10">
+        Projects we've done
+        </div>
+        <hr class="  w-1/6  h-2 border-orange-400">
     </div>
     <div class="grid  md:grid-cols-2 lg:grid-cols-4 gap-6  py-10 ">
       <div v-for="item in items" class="  group transition-all duration-200 hover:scale-[1.02] relative">
-        <img :src="item.src" alt="coffee cup icon" class=" shadow-2xl w-full  object-cover  h-96">
+        <img :src="item.src" alt="coffee cup icon" class=" shadow-2xl w-full  object-cover  aspect-[16/16]">
         <div
           class="absolute bg-orange-400/50 top-0 w-full h-full flex items-center justify-center text-center  scale-0 group-hover:scale-100 transition-all duration-300">
-        <div class="text-2xl text-white w-1/2 ">
+          <div class="text-2xl text-white w-1/2 ">
             {{ item.title }}
-        </div>
+          </div>
         </div>
         <div
           class="absolute bg-transparent border-8 border-white/80  top-0 w-full h-full flex items-center justify-center text-center  scale-0 group-hover:scale-75 transition-all duration-300">

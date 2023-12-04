@@ -1,9 +1,12 @@
 <template>
   <div>
-    <div class="text-center my-5">
-      Pricing
-    </div>
-    <hr class="w-full h-2 border-orange-400">
+      <div class=" flex flex-col items-center justify-center">
+      <div class=" text-5xl text-center  font-bold my-10">
+      Our Services
+      </div>
+      <hr class="  w-1/6  h-2 border-orange-400">
+  </div>
+   
     <div class="  grid grid-cols-4 gap-5 lg:p-10">
       <div v-for="(item,index) in items" class=" relative  p-5 flex flex-col items-center justify-center space-y-5 hover:shadow-2xl transition-all duration-300" :class="index === 1 ? 'border-orange-500/50 border-4' : 'border-black/20 border '">
         <p class="text-2xl font-serif ">{{ item.title }}</p>

@@ -1,4 +1,12 @@
 <template>
+
+    <div class=" flex flex-col items-center justify-center">
+        <div class=" text-5xl text-center  font-bold my-10">
+        About us
+        </div>
+        <hr class="  w-1/6  h-2 border-orange-400">
+    </div>
+
    <div class="flex w-full flex-col items-center justify-center  p-10 lg:flex-row ">
       <div class="flex flex-col items-center justify-center lg:w-1/2 lg:pl-10">
           <SectionHeader header="Your Comfort, Our Mission" title="Efficient Heating and Cooling Answers"

@@ -111,12 +111,12 @@ const items = [
 ]
 
 
-const threshold = ref(200)
+const threshold = ref(100)
 </script>
 <template>
   <v-app-bar app scroll-behavior="elevate" :scroll-threshold="threshold"
     class="px-4 font-serif transition-color duration-500 "
-    :class="{ 'bg-white  text-black': Y > threshold, 'bg-transparent text-white': Y <= threshold }">
+    :class="{ 'bg-white  text-black': Y >= threshold, 'bg-transparent text-white': Y <= threshold }">
     <template v-slot:prepend>
       <v-menu offset="10">
         <template v-slot:activator="{ props }">

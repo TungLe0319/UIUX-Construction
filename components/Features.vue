@@ -1,9 +1,11 @@
 <template>
   <div>
-    <div class=" text-5xl text-center  font-bold my-10">
-    Our Services
-    </div>
-    <hr class="   h-2 border-orange-400">
+  <div class=" flex flex-col items-center justify-center">
+      <div class=" text-5xl text-center  font-bold my-10">
+      Our Services
+      </div>
+      <hr class="  w-1/6  h-2 border-orange-400">
+  </div>
     <div class="  grid grid-cols-3 gap-5 lg:p-10 my-10">
       <div v-motion-slide-visible-bottom v-for="item in items" class="border border-black/20 p-5 hover:shadow-xl transition-all duration-300">
       <div class="flex gap-4  ">
