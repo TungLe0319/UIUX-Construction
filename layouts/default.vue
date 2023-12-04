@@ -13,7 +13,7 @@
         <transition name="loading-animation" mode="in-out">
           <div v-if="showAnimation" :style="{ color }" class="w-full flex items-center justify-center flex-col">
             <div class="text-8xl dancing-script mb-4">
-              Lorem Ipsum's Café
+              Lorem Ipsum's Construction
             </div>
             <div class=" text-4xl text-orange-300">
               {{ percent }}%
