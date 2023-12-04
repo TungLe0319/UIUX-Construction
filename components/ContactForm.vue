@@ -12,14 +12,16 @@
 
 
       
-        <div class="lg:w-1/3 flex flex-col items-center justify-center">
-          <h1 class="text-2xl font-bold  text-amber-400 font-serif">Lorem Ipsum Café</h1>
+        <div v-motion-slide-visible-left :delay="200" class="lg:w-1/3 flex flex-col items-center justify-center">
+          <h1 class="text-2xl font-bold  text-amber-400 font-serif">Lorem Ipsum Construction</h1>
           <div class="w-full my-10">
             <IconDivider />
           </div>
           <div class=" text-start flex flex-col items-start space-y-5">
+            <p class="font-bold">Available Hours:</p>
             <p class="text-center ">Monday - Friday: 9am - 5pm</p>
-            <p class="text-center ">Saturday - Sunday: 10am - 4pm</p>
+            <p class="text-center ">Saturday: 10am - 4pm</p>
+             <p class="text-center ">Sunday: Closed</p>
           </div>
           <div class="w-full my-10">
             <IconDivider />
@@ -37,7 +39,7 @@
             </div>
           </div>
         </div>
-        <div class="lg:w-2/3 ">
+        <div v-motion-slide-visible-right :delay="200" class="lg:w-2/3 ">
           <div class="lg:hidden block text-center font-serif  mt-10 lg:mt-0 ">
             Leave us a message!
             <IconDivider class="my-10 lg:my-0" />
@@ -67,7 +69,25 @@
             </v-container>
           </v-form>
         </div>
+
+    
       </section>
+          <div class=" my-20 border-y-4 border-orange-300 relative">
+           <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d23107.716467429007!2d-116.3375111064698!3d43.61768906142244!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x54ae543eef90e923%3A0x6eeda35bd710d3b9!2sThe%20Village%20at%20Meridian!5e0!3m2!1sen!2sus!4v1701667154931!5m2!1sen!2sus" 
+          height="450" 
+          style="border:0;" 
+          allowfullscreen="" 
+          loading="lazy" 
+          referrerpolicy="no-referrer-when-downgrade"
+          class="w-full">
+  </iframe>
+
+
+     <div
+        class="absolute z-40 -top-9 left-1/2 -translate-x-1/2  rounded-full   shadow-xl shadow-black/30 border-8 border-black/30  transition-all duration-150 ">
+        <Icon name='logos:teamwork-icon' class="text-amber-400 text-6xl" />
+      </div>
+          </div>
 </template>
 
 <script  setup>

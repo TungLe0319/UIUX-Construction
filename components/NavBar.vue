@@ -152,10 +152,10 @@ const threshold = ref(100)
     <div>
       <ul class="gap-4 relative hidden lg:flex">
         <li v-motion-slide-right :delay="2000" v-for="(item, index) in items" :key="index">
-          <v-btn @click="scrollToSection(item.href)"  class="nav-item  !text-sm"
+          <button @click="scrollToSection(item.href)"  class="nav-item  !text-base "
             :class="{ 'active text-orange-300 drop-shadow-sm': isActive(item.href) }">
             {{ item.title }}
-          </v-btn>
+          </button>
         </li>
 
       </ul>

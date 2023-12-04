@@ -7,13 +7,11 @@
         <hr class="  w-1/6  h-2 border-orange-400">
     </div>
     <div class="grid  md:grid-cols-2 lg:grid-cols-4 gap-6  py-10 ">
-      <div v-for="item in items" class="  group transition-all duration-200 hover:scale-[1.02] relative">
-        <img :src="item.src" alt="coffee cup icon" class=" shadow-2xl w-full  object-cover  aspect-[16/16]">
+      <div  v-for="item in items" class="  group transition-all duration-200 hover:scale-[1.02] relative">
+        <img v-motion-pop-visible  :src="item.src" alt="coffee cup icon" class=" shadow-2xl w-full  object-cover  aspect-[16/16]">
         <div
-          class="absolute bg-orange-400/50 top-0 w-full h-full flex items-center justify-center text-center  scale-0 group-hover:scale-100 transition-all duration-300">
-          <div class="text-2xl text-white w-1/2 ">
-            {{ item.title }}
-          </div>
+          class="absolute bg-orange-400/30 top-0 w-full h-full flex items-center justify-center text-center  scale-0 group-hover:scale-100 transition-all duration-300">
+         
         </div>
         <div
           class="absolute bg-transparent border-8 border-white/80  top-0 w-full h-full flex items-center justify-center text-center  scale-0 group-hover:scale-75 transition-all duration-300">
@@ -24,7 +22,7 @@
 </template>
 
 <script lang="ts" setup>
-import IconDivider from './Globals/IconDivider.vue';
+
 
 
 

@@ -1,15 +1,16 @@
 <template>
-  <div
-    class=" hero-image   flex items-center justify-center border-y-4 w-full border-orange-300  relative  text-center">
+  <div class=" hero-image   flex items-center justify-center border-y-4 w-full border-orange-300  relative  text-center my-24">
     <section class=" z-40 w-full p-10  flex  items-center justify-between  gap-2">
       <div v-for="item in items" class="flex flex-col items-center justify-center text-center space-y-4">
-        <Icon :name="item.icon" class=" text-6xl text-white" />
-        <h1 class="text-5xl font-bold text-orange-400">
+        <div v-motion-pop-visible :delay="300">
+          <Icon :name="item.icon" class=" text-6xl text-white" />
+        </div>
+        <h1 v-motion-slide-visible-top :delay="300" class="text-5xl font-bold text-orange-400">
           {{ item.number }}
         </h1>
-        <div class="text-white   ">
+        <div v-motion-slide-visible-bottom :delay="300" class="text-white   ">
           <p class="uppercase text-xl ">
-            {{ item.title  }}
+            {{ item.title }}
           </p>
         </div>
       </div>
@@ -41,7 +42,7 @@ const items = [
     number: '96%',
     title: 'Positive Reviews',
   },
-    {
+  {
     icon: 'solar:people-nearby-bold',
     number: '148K',
     title: 'Happy Customers',

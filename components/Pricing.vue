@@ -5,10 +5,14 @@
       Our Services
       </div>
       <hr class="  w-1/6  h-2 border-orange-400">
+
+      <div class="my-10 text-center w-2/3">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto explicabo, blanditiis, sapiente earum possimus dolor quia mollitia iure eveniet sit dolore cupiditate ducimus? Quidem, ratione.
+      </div>
   </div>
    
-    <div class="  grid grid-cols-4 gap-5 lg:p-10">
-      <div v-for="(item,index) in items" class=" relative  p-5 flex flex-col items-center justify-center space-y-5 hover:shadow-2xl transition-all duration-300" :class="index === 1 ? 'border-orange-500/50 border-4' : 'border-black/20 border '">
+    <div v-motion-slide-visible-bottom class="  grid grid-cols-4 gap-5 lg:p-10">
+      <div  v-for="(item,index) in items" class=" relative  p-5 flex flex-col items-center justify-center space-y-5 hover:shadow-2xl transition-all duration-300" :class="index === 1 ? 'border-orange-500/50 border-4 ' : 'border-black/20 border '">
         <p class="text-2xl font-serif ">{{ item.title }}</p>
        <div class="flex space-x-2">
          <p class="text-4xl  font-sans font-extralight text-orange-400"> ${{ item.price }}</p><p class="font-bold">/mo</p>
@@ -24,7 +28,7 @@
           <v-btn color="orange-lighten-2">Buy Now!</v-btn>
         </div>
 
-        <Icon v-if="index === 1" name="mdi:star" class="text-orange-400 text-7xl absolute -top-12 -left-4" />
+        <Icon v-if="index === 1" name="meteocons:clear-day-fill" class="text-orange-400 text-9xl absolute -top-14 -left-9 " />
       </div>
     </div>
   </div>

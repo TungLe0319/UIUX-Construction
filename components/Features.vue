@@ -1,21 +1,21 @@
 <template>
   <div>
-  <div class=" flex flex-col items-center justify-center">
+    <div class=" flex flex-col items-center justify-center">
       <div class=" text-5xl text-center  font-bold my-10">
-      Our Services
+        Our Services
       </div>
       <hr class="  w-1/6  h-2 border-orange-400">
-  </div>
+    </div>
     <div class="  grid grid-cols-3 gap-5 lg:p-10 my-10">
-      <div v-motion-slide-visible-bottom v-for="item in items" class="border border-black/20 p-5 hover:shadow-xl transition-all duration-300">
-      <div class="flex gap-4  ">
+      <div v-motion-slide-visible-bottom v-for="item in items"
+        class="border border-black/20 p-5 hover:shadow-xl transition-all duration-300">
+        <div class="flex gap-4  ">
           <Icon :name="item.icon" size="50px" class="text-orange-400 text-4xl" />
-      <div class=" w-3/4">
-            <span class="text-2xl font-serif "> {{ item.title }}</span>
+          <div class=" w-3/4">
+            <span class="text-2xl  "> {{ item.title }}</span>
             <p class=" my-5 text-gray-500"> {{ item.content }} </p>
-      </div>
-      </div>
-        
+          </div>
+        </div>
       </div>
     </div>
   </div>
